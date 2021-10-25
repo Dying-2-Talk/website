@@ -1,0 +1,27 @@
+{
+  "name": "d2t-website",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Dying To Talk",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dying-2-Talk/website.git"
+  },
+  "license": "MPL-2.0",
+  "homepage": "https://dying2talk.org",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "esbuild": "^0.13.9",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-typescript": "^14.0.1",
+    "eslint-plugin-import": "^2.25.2",
+    "rollup": "^2.58.3",
+    "rollup-plugin-esbuild": "^4.6.0",
+    "sass": "^1.43.3",
+    "typescript": "^4.4.4"
+  }
+}

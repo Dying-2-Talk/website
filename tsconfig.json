@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["es2019", "dom"],
+    "module": "esnext",
+    "moduleResolution": "node",
+  
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "downlevelIteration": true,
+      
+    "strict": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "outDir": "dist",
+    "baseUrl": "./"
+  },
+  "include": [
+    "src"
+  ]
+}
