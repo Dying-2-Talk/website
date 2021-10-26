@@ -10,11 +10,14 @@
   "license": "MPL-2.0",
   "homepage": "https://dying2talk.org",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:scss": "sass -w src/pages:dist",
+    "start:html": "node scripts/watch.js",
+    "build": "sass --no-source-map src/pages:dist"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
+    "chokidar": "^3.5.2",
     "esbuild": "^0.13.9",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-typescript": "^14.0.1",
