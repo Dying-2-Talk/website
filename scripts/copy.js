@@ -4,7 +4,7 @@ const path = require('path');
 fs.mkdirSync(path.resolve(__dirname, '../dist/assets'), { recursive: true });
 
 const copyHtml = () => {
-  const root = path.resolve(__dirname, '../src/pages');
+  const root = path.resolve(__dirname, '../src/html');
 
   fs.readdirSync(root)
     .filter(file => /\.html$/.test(file))

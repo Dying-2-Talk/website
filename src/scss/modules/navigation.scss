@@ -1,0 +1,8 @@
+@import '../base/variables.scss';
+
+.Navigation {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: $md;
+}
