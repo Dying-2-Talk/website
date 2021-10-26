@@ -1,11 +1,20 @@
 const chokidar = require('chokidar');
 
-const copyHtml = require('./copy');
+const { copyHtml, copyAssets } = require('./copy');
 
 chokidar
-  .watch('src/pages/*.html')
-  .on('ready', () => console.info('[watch.js] watching files'))
-  .on('change', path => {
+  .watch([
+    'src/pages/*.html',
+    'src/assets'
+  ])
+  .on('ready', () => {
+    console.info('[watch.js] watching files');
     copyHtml();
-    console.info(`[watch.js] copied ${path}`);
+    copyAssets();
+    console.info('[watch.js] copied files');
+  })
+  .on('all', (type, path) => {
+    if (path.includes('.html')) copyHtml();
+    if (path.includes('assets')) copyAssets();
+    console.info(`[watch.js] copied ${path} (${type})`);
   });
