@@ -1,0 +1,8 @@
+@import './variables';
+
+.Page {
+  > section {
+    margin: 0 auto;
+    max-width: $md;
+  }
+}

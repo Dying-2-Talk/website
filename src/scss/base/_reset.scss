@@ -1,6 +1,10 @@
+@import './variables';
+
 html {
   box-sizing: border-box;
   font-size: 16px;
+  background-color: $white;
+  scroll-behavior: smooth;
 }
 
 *, *:before, *:after {

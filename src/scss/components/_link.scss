@@ -1,0 +1,40 @@
+@import '../base/variables';
+@import '../base/mixins';
+
+@import './typography';
+
+@mixin link-hover($color) {
+  color: $color;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    transition: width 200ms;
+    background-color: $color;
+  }
+
+  @include hoverActive {
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+a, .link {
+  @extend %typography-base;
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+
+  &.link-hover-black {
+    @include link-hover($black);
+  }
+
+  &.link-hover-white {
+    @include link-hover($white);
+  }
+}

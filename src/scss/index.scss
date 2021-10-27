@@ -1,0 +1,62 @@
+@import './base/_reset';
+@import './base/layout';
+@import './base/icons';
+
+@import './components/typography';
+@import './components/_button';
+@import './components/_link';
+
+@import './modules/_navigation';
+
+@keyframes read-more {
+  0% {
+    padding: 4px 0px;
+  }
+
+  20% {
+    padding-top: 8px;
+    padding-bottom: 0px;
+  }
+
+  40% {
+    padding: 4px 0px;
+  }
+}
+
+.HomePage {
+  > .Page > section:first-child {
+    margin: unset;
+    max-width: unset;
+    height: calc(100vh - $header);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+
+    > .title {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      > a {
+        margin-top: 80px;
+      }
+    }
+
+    > .read-more {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      > .material-icons {
+        font-size: 2rem;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        animation: read-more 2000ms infinite;
+      }
+    }
+  }
+}

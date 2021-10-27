@@ -1,0 +1,17 @@
+@import '../base/_variables';
+
+.Navigation {
+  position: sticky;
+  height: $header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  max-width: $md;
+
+  > nav > ul {
+    display: flex;
+    justify-content: flex-end;
+    gap: 80px;
+  }
+}

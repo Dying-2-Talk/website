@@ -10,10 +10,10 @@
   "license": "MPL-2.0",
   "homepage": "https://dying2talk.org",
   "scripts": {
-    "start:scss": "sass -w src/scss/pages:dist",
-    "start:html": "node scripts/watch.js",
+    "start:scss": "sass -w src/scss:dist",
+    "start:html": "npm run clean && node scripts/watch.js",
     "clean": "node scripts/clean.js",
-    "build": "npm run clean && sass --no-source-map src/scss/pages:dist"
+    "build": "npm run clean && sass --no-source-map src/scss:dist"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.33.0",

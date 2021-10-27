@@ -4,7 +4,7 @@ const { copyHtml, copyAssets } = require('./copy');
 
 chokidar
   .watch([
-    'src/pages/*.html',
+    'src/html/*.html',
     'src/assets'
   ])
   .on('ready', () => {

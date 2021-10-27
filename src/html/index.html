@@ -5,43 +5,48 @@
     <meta charset="utf-8">
     <title>Home - Dying 2 Talk</title>
     <link rel="shortcut icon" href="./assets/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="index.css" />
   </head>
 
-  <body>
-    <header class="">
-      <img
-        width="50px"
-        height="50px"
-        src="./assets/logo_wireframe.svg"
-        alt="Black wireframe sideview of an opened wooden coffin"
-      />
-      <nav class="Navigation">
+  <body class="HomePage">
+    <header class="Navigation">
+      <img width="50px" height="50px" src="./assets/logo_wireframe.svg"
+        alt="Black wireframe sideview of an opened wooden coffin" />
+      <nav>
         <ul>
           <li>
-            <a href="/about.html">About</a>
+            <a class="link-hover-black" href="./about.html">About</a>
           </li>
           <li>
-            <a href="/gallery.html">Showcase</a>
+            <a class="link-hover-black" href="./gallery.html">Showcase</a>
           </li>
           <li>
-            <a href="/resources.html">Resources</a>
+            <a class="link-hover-black" href="./resources.html">Resources</a>
           </li>
           <li>
-            <a href="/contact.html">Contact</a>
+            <a class="link-hover-black" href="./contact.html">Contact</a>
           </li>
         </ul>
       </nav>
     </header>
-    <main>
+    <main class="Page">
       <section>
-        <h1>Death</h1>
+        <div class="title">
+          <h2 class="h1">Death</h2>
+          <h3 class="h5">Let's start a conversation</h3>
+          <a class="button button-filled-black button-icon" href="./resources.html">
+            Get started
+            <span class="material-icons">chevron_right</span>
+          </a>
+        </div>
+        <div class="read-more">
+          <a class="link link-hover-black" href="#what">Read more</a>
+          <span class="material-icons">expand_more</span>
+        </div>
       </section>
       <section>
-        <h2>What</h2>
+        <h2 id="what">What</h2>
       </section>
       <section>
         <h2>What</h2>
