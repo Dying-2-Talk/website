@@ -5,6 +5,7 @@ const fs = require('fs/promises');
 const gulp = require('gulp');
 const gulpSass = require('gulp-sass')(require('sass'));
 const gulpTypescript = require('gulp-typescript');
+const gulpFlatten = require('gulp-flatten');
 
 const dirOut = './dist';
 const clean = () => fs.rm(path.resolve(__dirname, dirOut), { force: true, recursive: true });
@@ -12,10 +13,8 @@ const clean = () => fs.rm(path.resolve(__dirname, dirOut), { force: true, recurs
 const srcSass = 'src/**/*.scss';
 const sass = () => gulp.src(srcSass)
   .pipe(gulpSass().on('error', gulpSass.logError))
-  .pipe(gulp.dest(file => {
-    file.path = path.resolve(dirOut, path.basename(file.path));
-    return dirOut;
-  }));
+  .pipe(gulpFlatten())
+  .pipe(gulp.dest(dirOut));
 
 const srcAssets = 'src/assets/**/*';
 const assets = () => gulp.src(srcAssets)
@@ -23,16 +22,14 @@ const assets = () => gulp.src(srcAssets)
 
 const srcHtml = 'src/pages/**/*.html';
 const html = () => gulp.src(srcHtml)
-  .pipe(gulp.dest(file => {
-    file.path = path.resolve(dirOut, path.basename(file.path));
-    return dirOut;
-  }));
+  .pipe(gulpFlatten())
+  .pipe(gulp.dest(dirOut));
 
 const srcTs = 'src/ts/*.ts';
 const tsProject = gulpTypescript.createProject('tsconfig.json');
 const ts = () => gulp.src(srcTs)
   .pipe(tsProject())
-  .pipe(gulp.dest(dirOut));
+  .pipe(gulp.dest(path.resolve(dirOut, 'scripts')));
 
 const build = gulp.series(
   clean,

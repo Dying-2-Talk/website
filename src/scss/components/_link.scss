@@ -13,7 +13,7 @@
     left: 0;
     width: 0%;
     height: 2px;
-    transition: width 200ms;
+    transition: width $durationShort;
     background-color: $color;
   }
 

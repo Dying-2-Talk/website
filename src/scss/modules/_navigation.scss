@@ -1,8 +1,9 @@
-@import '../_variables';
+@import "../_variables";
 
 .Navigation {
   position: fixed;
   width: 100%;
+  transition: background-color $durationComplex;
 
   > nav {
     display: flex;
@@ -12,10 +13,51 @@
     margin: 0 auto;
     padding: 20px;
 
+    > .logo {
+      display: flex;
+      gap: 10px;
+
+      > p {
+        transition: color $durationShort;
+      }
+
+      > svg {
+        transition: stroke $durationShort;
+      }
+    }
+
     > ul {
       display: flex;
       justify-content: flex-end;
       gap: 80px;
+
+      > li > a {
+        transition: color $durationShort;
+      }
+    }
+  }
+
+  &.active {
+    background-color: $black;
+
+    > nav {
+      > .logo {
+        > svg {
+          stroke: $white;
+        }
+
+        > p {
+          color: $white;
+        }
+      }
+
+      > ul > li > a {
+        color: $white;
+
+        &:after {
+          background-color: $white;
+        }
+      }
     }
   }
 }

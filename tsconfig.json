@@ -20,7 +20,6 @@
   },
   "include": [
     "src",
-    "scripts",
     ".eslintrc.js",
     "gulpfile.js"
   ]
