@@ -4,6 +4,7 @@
   position: fixed;
   width: 100%;
   transition: background-color $durationComplex;
+  z-index: 10;
 
   > nav {
     display: flex;
