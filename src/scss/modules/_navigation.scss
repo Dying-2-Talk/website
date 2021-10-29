@@ -1,17 +1,21 @@
-@import '../base/_variables';
+@import '../_variables';
 
 .Navigation {
-  position: sticky;
-  height: $header;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
-  max-width: $md;
+  position: fixed;
+  width: 100%;
 
-  > nav > ul {
+  > nav {
     display: flex;
-    justify-content: flex-end;
-    gap: 80px;
+    justify-content: space-between;
+    align-items: center;
+    max-width: $md;
+    margin: 0 auto;
+    padding: 20px;
+
+    > ul {
+      display: flex;
+      justify-content: flex-end;
+      gap: 80px;
+    }
   }
 }

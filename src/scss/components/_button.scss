@@ -1,7 +1,7 @@
-@import '../base/variables';
-@import '../base/mixins';
+@import '../_variables';
+@import '../_mixins';
 
-@import './typography';
+@import './_typography';
 
 @mixin button-filled($color, $background-color) {
   display: inline-flex;

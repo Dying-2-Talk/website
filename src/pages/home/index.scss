@@ -1,12 +1,12 @@
-@import './base/_reset';
-@import './base/layout';
-@import './base/icons';
+@import '../../scss/_reset';
 
-@import './components/typography';
-@import './components/_button';
-@import './components/_link';
+@import '../../scss/components/_icons';
+@import '../../scss/components/_typography';
+@import '../../scss/components/_button';
+@import '../../scss/components/_link';
 
-@import './modules/_navigation';
+@import '../../scss/modules/_page';
+@import '../../scss/modules/_navigation';
 
 @keyframes read-more {
   0% {
@@ -27,7 +27,7 @@
   > .Page > section:first-child {
     margin: unset;
     max-width: unset;
-    height: calc(100vh - $header);
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
