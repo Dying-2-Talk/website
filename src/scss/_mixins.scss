@@ -3,3 +3,9 @@
     @content;
   }
 }
+
+@mixin scrollOffset($offset) {
+  html {
+    scroll-padding-top: $header + $offset;
+  }
+}

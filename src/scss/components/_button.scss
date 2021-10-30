@@ -3,23 +3,39 @@
 
 @import './_typography';
 
-@mixin button-filled($color, $background-color) {
+%button-base {
   display: inline-flex;
   justify-content: center;
   align-items: center;
   padding: 16px 24px;
-  transition: border-color $durationShort, color $durationShort, background-color $durationShort;
   font-weight: 500;
   text-transform: uppercase;
+  letter-spacing: 4;
+}
+
+@mixin button-filled($color, $background-color) {
+  @extend %button-base;
+  transition: border-color $durationShort, color $durationShort, background-color $durationShort;
   color: $color;
   background-color: $background-color;
-  letter-spacing: 4;
   border: 2px solid $background-color;
 
   @include hoverActive {
     background-color: $color;
     color: $background-color;
     border-color: $background-color
+  }
+}
+
+@mixin button-outline($color, $background-color) {
+  @extend %button-base;
+  transition: color $durationShort, background-color $durationShort;
+  color: $color;
+  border: 2px solid $color;
+
+  @include hoverActive {
+    background-color: $color;
+    color: $background-color;
   }
 }
 
@@ -31,7 +47,19 @@ button, .button {
   padding: 0;
 
   &.button-filled-black {
-    @include button-filled($white, $black)
+    @include button-filled($white, $black);
+  }
+
+  &.button-filled-white {
+    @include button-filled($black, $white);
+  }
+
+  &.button-outline-black {
+    @include button-outline($black, $white);
+  }
+
+  &.button-outline-white {
+    @include button-outline($white, $black);
   }
 
   &.button-icon {

@@ -7,6 +7,7 @@
 
 @import '../../scss/modules/_page';
 @import '../../scss/modules/_navigation';
+@import '../../scss/modules/footer';
 
 @keyframes read-more {
   0% {
@@ -22,6 +23,8 @@
     padding: 4px 0px;
   }
 }
+
+@include scrollOffset(100px);
 
 .HomePage {
   > .Page > section:first-child {
@@ -56,6 +59,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      padding-top: 40px;
 
       > a {
         margin-top: 80px;

@@ -1,0 +1,73 @@
+@import "../_variables";
+
+.Footer {
+  border-top: 2px solid $black;
+  padding: 16px;
+
+  > .logos {
+    display: flex;
+    justify-content: space-between;
+
+    > .partners {
+      display: flex;
+      gap: 32px;
+      width: 100%;
+
+      > a {
+        display: flex;
+        align-items: center;
+
+        > img {
+          width: auto;
+          height: 48px;
+        }
+      }
+    }
+
+    > .parent {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-grow: 1;
+
+      > a > img {
+        margin-right: 16px;
+        margin-bottom: 8px;
+      }
+    }
+
+    > .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+
+  > .socials {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    padding: 16px 0px;
+
+    > a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      > svg {
+        width: 24px;
+        height: 24px;
+        fill: $black;
+      }
+    }
+  }
+
+  > .source > p {
+    text-align: center;
+
+    + p {
+      margin-top: 0.25rem;
+    }
+  }
+}
