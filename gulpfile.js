@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 const path = require('path');
-const fs = require('fs/promises');
+const fs = require('fs');
 
 const gulp = require('gulp');
 const gulpSass = require('gulp-sass')(require('sass'));
@@ -8,7 +8,10 @@ const gulpTypescript = require('gulp-typescript');
 const gulpFlatten = require('gulp-flatten');
 
 const dirOut = './dist';
-const clean = () => fs.rm(path.resolve(__dirname, dirOut), { force: true, recursive: true });
+const clean = () => {
+  fs.rmSync(path.resolve(__dirname, dirOut), { force: true, recursive: true });
+  return Promise.resolve();
+};
 
 const srcSass = 'src/**/*.scss';
 const sass = () => gulp.src(srcSass)
