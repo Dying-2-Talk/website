@@ -9,7 +9,7 @@ const gulpFlatten = require('gulp-flatten');
 
 const dirOut = './dist';
 const clean = () => {
-  fs.rmSync(path.resolve(__dirname, dirOut), { force: true, recursive: true });
+  fs.rmdirSync(path.resolve(__dirname, dirOut), { recursive: true });
   return Promise.resolve();
 };
 
