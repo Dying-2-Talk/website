@@ -9,7 +9,10 @@ const gulpFlatten = require('gulp-flatten');
 
 const dirOut = './dist';
 const clean = () => {
-  fs.rmdirSync(path.resolve(__dirname, dirOut), { recursive: true });
+  const host = path.resolve(__dirname, dirOut);
+  if (fs.existsSync(host)) {
+    fs.rmdirSync(host, { recursive: true });
+  }
   return Promise.resolve();
 };
 
