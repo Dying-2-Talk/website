@@ -83,6 +83,7 @@
 %page-base {
   display: grid;
   grid-template-columns: repeat(3, auto);
+  justify-items: center;
 
   > * {
     grid-column: 2;
