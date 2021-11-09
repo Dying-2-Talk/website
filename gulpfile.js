@@ -22,20 +22,20 @@ const clean = () => {
   return Promise.resolve();
 };
 
-const sass = () => gulp.src(paths.sass, { since: gulp.lastRun(sass) })
+const sass = () => gulp.src(paths.sass)
   .pipe(gulpSass().on('error', gulpSass.logError))
   .pipe(gulpFlatten())
   .pipe(gulp.dest(paths.dist));
 
-const assets = () => gulp.src(paths.assets, { since: gulp.lastRun(assets) })
+const assets = () => gulp.src(paths.assets)
   .pipe(gulp.dest(paths.dist));
 
-const html = () => gulp.src(paths.html, { since: gulp.lastRun(html) })
+const html = () => gulp.src(paths.html)
   .pipe(gulpFlatten())
   .pipe(gulp.dest(paths.dist));
 
 const tsProject = gulpTypescript.createProject('tsconfig.json');
-const ts = () => gulp.src(paths.ts, { since: gulp.lastRun(ts) })
+const ts = () => gulp.src(paths.ts)
   .pipe(tsProject())
   .pipe(gulp.dest(path.resolve(paths.dist, 'scripts')));
 
