@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 const path = require('path');
 const fs = require('fs');
 
@@ -7,51 +6,55 @@ const gulpSass = require('gulp-sass')(require('sass'));
 const gulpTypescript = require('gulp-typescript');
 const gulpFlatten = require('gulp-flatten');
 
-const dirOut = './dist';
+const paths = {
+  dist: './dist',
+  sass: 'src/**/*.scss',
+  assets: 'src/assets/**/*',
+  html: 'src/pages/**/*.html',
+  ts: 'src/ts/*.ts'
+};
+
 const clean = () => {
-  const host = path.resolve(__dirname, dirOut);
+  const host = path.resolve(__dirname, paths.dist);
   if (fs.existsSync(host)) {
     fs.rmdirSync(host, { recursive: true });
   }
   return Promise.resolve();
 };
 
-const srcSass = 'src/**/*.scss';
-const sass = () => gulp.src(srcSass)
+const sass = () => gulp.src(paths.sass, { since: gulp.lastRun(sass) })
   .pipe(gulpSass().on('error', gulpSass.logError))
   .pipe(gulpFlatten())
-  .pipe(gulp.dest(dirOut));
+  .pipe(gulp.dest(paths.dist));
 
-const srcAssets = 'src/assets/**/*';
-const assets = () => gulp.src(srcAssets)
-  .pipe(gulp.dest(dirOut));
+const assets = () => gulp.src(paths.assets, { since: gulp.lastRun(assets) })
+  .pipe(gulp.dest(paths.dist));
 
-const srcHtml = 'src/pages/**/*.html';
-const html = () => gulp.src(srcHtml)
+const html = () => gulp.src(paths.html, { since: gulp.lastRun(html) })
   .pipe(gulpFlatten())
-  .pipe(gulp.dest(dirOut));
+  .pipe(gulp.dest(paths.dist));
 
-const srcTs = 'src/ts/*.ts';
 const tsProject = gulpTypescript.createProject('tsconfig.json');
-const ts = () => gulp.src(srcTs)
+const ts = () => gulp.src(paths.ts, { since: gulp.lastRun(ts) })
   .pipe(tsProject())
-  .pipe(gulp.dest(path.resolve(dirOut, 'scripts')));
+  .pipe(gulp.dest(path.resolve(paths.dist, 'scripts')));
 
 const build = gulp.series(
   clean,
   gulp.parallel(
+    ts,
     assets,
     html,
     sass,
-    ts
   )
 );
 
 exports.build = build;
 exports.watch = () => {
   build();
-  gulp.watch(srcSass, sass);
-  gulp.watch(srcAssets, assets);
-  gulp.watch(srcHtml, html);
-  gulp.watch(srcTs, ts);
+
+  gulp.watch(paths.sass, sass);
+  gulp.watch(paths.assets, assets);
+  gulp.watch(paths.html, html);
+  gulp.watch(paths.ts, ts);
 };
