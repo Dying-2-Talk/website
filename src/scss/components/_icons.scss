@@ -1,13 +1,18 @@
 @import '../_variables';
 
-.material-icons.black {
-  color: $black;
-}
+.icon {
+  width: 28px;
+  height: 28px;
 
-.material-icons.white {
-  color: $white;
-}
-
-.material-icons.primary {
-  color: $primary;
+  &.black {
+    color: $black;
+  }
+  
+  &.white {
+    color: $white;
+  }
+  
+  &.primary {
+    color: $primary;
+  }
 }

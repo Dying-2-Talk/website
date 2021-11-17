@@ -3,7 +3,8 @@
 
 @font-face {
   font-family: 'Mignon';
-  src: url('./fonts/mignon-regular.otf'), url('./fonts/mignon-it.otf');
+  font-display: swap;
+  src: local('./fonts/mignon-regular.otf'), local('./fonts/mignon-it.otf');
 }
 
 %typography-base {

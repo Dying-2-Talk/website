@@ -3,10 +3,15 @@ const navigation = document.querySelector('.Navigation');
 if (navigation) {
   let isActive = window.screenY > 10;
   if (isActive) navigation.classList.add('active');
+
+  let scrollListener: number;
   window.addEventListener('scroll', () => {
-    if (isActive !== window.scrollY > 10) {
-      isActive = !!navigation.classList.toggle('active');
-    }
+    if (scrollListener) cancelAnimationFrame(scrollListener);
+    scrollListener = requestAnimationFrame(() => {
+      if (isActive !== window.scrollY > 10) {
+        isActive = !!navigation.classList.toggle('active');
+      }
+    });
   }, { passive: true });
 }
 
@@ -16,16 +21,24 @@ const menuList = navigation?.querySelector('nav > ul');
 if (menuButton && menuList) {
   let open = false;
 
-  menuButton.addEventListener('click', () => {
-    open = !open;
-    menuButton.classList.toggle('active');
-    menuList.classList.toggle('open');
+  let resizeListener: number;
+  window.addEventListener('resize', () => {
+    if (resizeListener) cancelAnimationFrame(resizeListener);
+    resizeListener = requestAnimationFrame(() => {
+      if (window.innerWidth > 768) {
+        menuButton.classList.remove('active');
+        menuList.classList.remove('open');
+      }
+    });
   }, { passive: true });
 
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) {
-      menuButton.classList.remove('active');
-      menuList.classList.remove('open');
-    }
+  let clickListener: number;
+  menuButton.addEventListener('click', () => {
+    if (clickListener) cancelAnimationFrame(clickListener);
+    clickListener = requestAnimationFrame(() => {
+      open = !open;
+      menuButton.classList.toggle('active');
+      menuList.classList.toggle('open');
+    });
   }, { passive: true });
 }

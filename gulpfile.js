@@ -6,6 +6,8 @@ const gulpSass = require('gulp-sass')(require('sass'));
 const gulpTypescript = require('gulp-typescript');
 const gulpFlatten = require('gulp-flatten');
 const gulpRename = require('gulp-rename');
+const gulpCleanCss = require('gulp-clean-css');
+const gulpMinify = require('gulp-minify');
 
 const { version } = require('./package.json');
 
@@ -28,6 +30,7 @@ const clean = () => {
 const sass = () => gulp.src(paths.sass)
   .pipe(gulpRename({ suffix: `-${version}` }))
   .pipe(gulpSass().on('error', gulpSass.logError))
+  .pipe(gulpCleanCss({ level: 2 }))
   .pipe(gulpFlatten())
   .pipe(gulp.dest(paths.dist));
 
@@ -42,6 +45,7 @@ const tsProject = gulpTypescript.createProject('tsconfig.json');
 const ts = () => gulp.src(paths.ts)
   .pipe(gulpRename({ suffix: `-${version}` }))
   .pipe(tsProject())
+  .pipe(gulpMinify({ noSource: true, ext: { min: '.js', src: '-src.js' } }))
   .pipe(gulp.dest(path.resolve(paths.dist, 'scripts')));
 
 const build = gulp.series(

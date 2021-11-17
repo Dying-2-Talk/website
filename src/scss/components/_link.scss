@@ -41,25 +41,26 @@
 
 @mixin link-hover($color) {
   color: $color;
+  text-decoration: underline;
 
-  @media (max-width: $md) {
-    text-decoration: underline;
-  }
+  @media (min-width: $md) {
+    text-decoration: none;
 
-  &::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    height: 2px;
-    background-color: $color;
-    width: 0%;
-    transition: width $durationShort;
-  }
-
-  @include hoverActive {
     &::after {
-      width: 100%;
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      height: 2px;
+      background-color: $color;
+      width: 0%;
+      transition: width $durationShort;
+    }
+  
+    @include hoverActive {
+      &::after {
+        width: 100%;
+      }
     }
   }
 }

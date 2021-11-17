@@ -13,16 +13,16 @@
 
 @keyframes read-more {
   0% {
-    padding: 4px 0px;
+    margin: 4px 0px;
   }
 
   20% {
-    padding-top: 8px;
-    padding-bottom: 0px;
+    margin-top: 8px;
+    margin-bottom: 0px;
   }
 
   40% {
-    padding: 4px 0px;
+    margin: 4px 0px;
   }
 }
 
@@ -84,10 +84,10 @@
       align-items: center;
       margin-top: 24px;
 
-      > .material-icons {
+      > .icon {
         font-size: 2rem;
-        padding-top: 4px;
-        padding-bottom: 4px;
+        margin-top: 4px;
+        margin-bottom: 4px;
         animation: read-more 2000ms infinite;
       }
     }
