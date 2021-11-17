@@ -1,0 +1,41 @@
+@import '../../_variables';
+
+.Text-and-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 80px;
+
+  @media (min-width: $md) {
+    flex-wrap: nowrap;
+  }
+
+  &.reverse {
+    flex-direction: row-reverse;
+  }
+
+  > img {
+    flex-shrink: 0;
+    border: 2px solid $white;
+    padding: 8px;
+    object-fit: cover;
+    max-width: $xs;
+    max-height: $xs;
+  }
+
+  > .text {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 0px;
+
+    > h2 {
+      margin-bottom: 3rem;
+    }
+
+    > .button {
+      align-self: flex-end;
+      margin-top: 32px;
+    }
+  }
+}

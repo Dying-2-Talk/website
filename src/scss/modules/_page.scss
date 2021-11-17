@@ -3,80 +3,14 @@
 @mixin section-content($color, $background-color) {
   background-color: $background-color;
   color: $color;
-  padding: 192px 16px;
+  padding: 96px 16px;
 
-  > .text-and-image {
-    display: flex;
-    align-items: center;
-    gap: 80px;
-
-    &.reverse {
-      flex-direction: row-reverse;
-    }
-
-    > img {
-      flex-shrink: 0;
-      border: 2px solid $color;
-      padding: 8px;
-      object-fit: cover;
-    }
-
-    > .text {
-      display: flex;
-      flex-direction: column;
-      padding: 16px 0px;
-
-      > h2 {
-        margin-bottom: 3rem;
-      }
-
-      > .button {
-        align-self: flex-end;
-        margin-top: 32px;
-      }
-    }
+  @media (min-width: $sm) {
+    padding: 192px 32px;
   }
 
-  > .gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 80px;
-
-    > h2 {
-      text-align: center;
-    }
-
-    > ul {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 40px;
-      justify-items: center;
-
-      > li {
-        max-width: 300px;
-
-        > a > img {
-          position: relative;
-          border: 2px solid $color;
-          padding: 8px;
-          object-fit: cover;
-          transition: padding $durationShort;
-
-          @include hoverActive {
-            padding: 0px;
-          }
-        }
-
-        > .body {
-          padding: 8px;
-
-          > h3 {
-            margin-top: 0.25rem;
-            margin-bottom: 0.5rem;
-          }
-        }
-      }
-    }
+  > .Text-and-image > img {
+    border-color: $color;
   }
 }
 

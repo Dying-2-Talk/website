@@ -42,6 +42,10 @@
 @mixin link-hover($color) {
   color: $color;
 
+  @media (max-width: $md) {
+    text-decoration: underline;
+  }
+
   &::after {
     content: '';
     position: absolute;

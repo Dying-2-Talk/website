@@ -23,45 +23,58 @@ h1, h2, h3, h4, h5, h6, p, caption {
  */
 
 h1, .h1 {
-  font-size: 11.089rem;
-  letter-spacing: 2rem;
+  font-size: $fontSize4;
+  letter-spacing: 1rem;
+
+  @media (min-width: $xs) {
+    letter-spacing: 2rem;
+    font-size: $fontSize5;
+  }
+
+  @media (min-width: $sm) {
+    font-size: $fontSize6;
+  }
 }
 
 h2, .h2 {
-  font-size: 6.854rem;
+  font-size: $fontSize4;
+
+  @media (min-width: $xs) {
+    font-size: $fontSize5;
+  }
 }
 
 h3, .h3 {
-  font-size: 4.236rem;
+  font-size: $fontSize4;
 }
 
 h4, .h4 {
-  font-size: 2.618rem;
+  font-size: $fontSize3;
   font-style: italic;
   letter-spacing: 0.5rem;
 }
 
 h5, .h5 {
-  font-size: 1.618rem;
+  font-size: $fontSize2;
   font-style: italic;
   letter-spacing: 0.25rem;
 }
 
 h6, .h6 {
-  font-size: 1.25rem;
+  font-size: $fontSize1;
   font-weight: 600;
 }
 
 p {
-  font-size: 1.25rem;
+  font-size: $fontSize1;
 
   &.paragraph {
-    margin-bottom: 1rem;
+    margin-bottom: $fontSize0;
     line-height: 1.4;
     letter-spacing: 0.8;
   }
 
   &.caption {
-    font-size: 1rem;
+    font-size: $fontSize0;
   }
 }

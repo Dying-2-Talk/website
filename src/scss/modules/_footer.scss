@@ -6,33 +6,32 @@
 
   > .logos {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 32px;
+
+    @media (min-width: $md) {
+      justify-content: space-between;
+      flex-wrap: nowrap;
+    }
 
     > .partners {
       display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
       gap: 32px;
       width: 100%;
 
-      > a {
-        display: flex;
-        align-items: center;
-
-        > img {
-          width: auto;
-          height: 48px;
-        }
+      @media (min-width: $md) {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
       }
-    }
 
-    > .parent {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      flex-grow: 1;
-
-      > a > img {
-        margin-right: 16px;
-        margin-bottom: 8px;
+      > img {
+        width: auto;
+        height: 48px;
       }
     }
 
@@ -46,9 +45,14 @@
 
   > .socials {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 24px;
     padding: 16px 0px;
+
+    @media (min-width: $md) {
+      flex-wrap: nowrap;
+    }
 
     > a {
       display: flex;

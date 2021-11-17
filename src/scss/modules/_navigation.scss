@@ -8,6 +8,7 @@
   max-height: $header;
 
   > nav {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,12 +31,57 @@
     }
 
     > ul {
+      @media (max-width: $sm) {
+        display: none;
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        top: 100%;
+        background-color: $black;
+        border-top: 2px solid $primary;
+
+        &.open {
+          display: block;
+        }
+  
+        > li {
+          margin: 24px;
+  
+          > a {
+            color: $white;
+          }
+        }
+      }
+
       display: flex;
       justify-content: flex-end;
-      gap: 80px;
+      gap: 40px;
+
+      @media (min-width: $md) {
+        gap: 80px;
+      }
 
       > li > a {
         transition: color $durationShort;
+      }
+    }
+
+    > button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: color $durationShort;
+
+      &.active > svg {
+        transform: rotate(180deg);
+      }
+
+      > svg {
+        transition: fill $durationShort;
+      }
+
+      @media (min-width: $sm) {
+        display: none;
       }
     }
   }
@@ -51,6 +97,14 @@
 
         > p {
           color: $white;
+        }
+      }
+
+      > button {
+        color: $white;
+
+        > svg {
+          fill: $white;
         }
       }
 
