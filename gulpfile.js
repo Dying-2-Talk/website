@@ -4,9 +4,9 @@ const fs = require('fs');
 const gulp = require('gulp');
 const gulpSass = require('gulp-sass')(require('sass'));
 const gulpTypescript = require('gulp-typescript');
-const gulpFlatten = require('gulp-flatten');
 const gulpRename = require('gulp-rename');
 const gulpCleanCss = require('gulp-clean-css');
+const gulpFlatten = require('gulp-flatten');
 const gulpMinify = require('gulp-minify');
 
 const { version } = require('./package.json');
@@ -38,7 +38,7 @@ const assets = () => gulp.src(paths.assets)
   .pipe(gulp.dest(paths.dist));
 
 const html = () => gulp.src(paths.html)
-  .pipe(gulpFlatten())
+  .pipe(gulpFlatten({ subPath: [0, -1] }))
   .pipe(gulp.dest(paths.dist));
 
 const tsProject = gulpTypescript.createProject('tsconfig.json');

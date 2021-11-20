@@ -31,6 +31,18 @@
     }
 
     > ul {
+      > li > a.active {
+        &.active {
+          padding-left: 16px;
+
+          &::before {
+            content: '>';
+            position: absolute;
+            left: 0px;
+          }
+        }
+      }
+
       @media (max-width: $sm) {
         display: block;
         position: absolute;
@@ -51,6 +63,16 @@
   
           > a {
             color: $white;
+
+            &.active {
+              padding-left: 20px;
+    
+              &::before {
+                content: '> ';
+                position: absolute;
+                left: 0px;
+              }
+            }
           }
         }
       }
