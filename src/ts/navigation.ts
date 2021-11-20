@@ -1,44 +1,54 @@
-// Background
-const navigation = document.querySelector('.Navigation');
-if (navigation) {
-  let isActive = window.screenY > 10;
-  if (isActive) navigation.classList.add('active');
+const listeners: Record<string, number> = {
+  scroll: 0,
+  resize: 0
+};
 
-  let scrollListener: number;
-  window.addEventListener('scroll', () => {
-    if (scrollListener) cancelAnimationFrame(scrollListener);
-    scrollListener = requestAnimationFrame(() => {
-      if (isActive !== window.scrollY > 10) {
-        isActive = !!navigation.classList.toggle('active');
-      }
-    });
-  }, { passive: true });
-}
+const navigation = (() => {
+  type Elements = {
+    root: HTMLDivElement,
+    button: HTMLButtonElement,
+    list: HTMLUListElement
+  };
 
-// Mobile nav
-const menuButton = navigation?.querySelector('nav > button');
-const menuList = navigation?.querySelector('nav > ul');
-if (menuButton && menuList) {
-  let open = false;
+  const elements = {
+    root: document.querySelector('.Navigation'),
+    button: document.querySelector('.Navigation > nav > button'),
+    list: document.querySelector('.Navigation > nav > ul')
+  };
 
-  let resizeListener: number;
-  window.addEventListener('resize', () => {
-    if (resizeListener) cancelAnimationFrame(resizeListener);
-    resizeListener = requestAnimationFrame(() => {
-      if (window.innerWidth > 768) {
-        menuButton.classList.remove('active');
-        menuList.classList.remove('open');
-      }
-    });
-  }, { passive: true });
+  if (Object.values(elements).every(x => x)) return elements as Elements;
 
-  let clickListener: number;
-  menuButton.addEventListener('click', () => {
-    if (clickListener) cancelAnimationFrame(clickListener);
-    clickListener = requestAnimationFrame(() => {
-      open = !open;
-      menuButton.classList.toggle('active');
-      menuList.classList.toggle('open');
-    });
-  }, { passive: true });
-}
+  const invalidElements = Object.entries(elements)
+    .filter(entry => !entry[1])
+    .map(([key]) => key)
+    .join(', ');
+
+  throw new Error(`Failed to initialize elements: ${invalidElements}`);
+})();
+
+const showBackground = () => window.scrollY > 24;
+const setBackground = (x?: boolean) => navigation.root.classList.toggle('active', x);
+const setMenu = (x?: boolean) => {
+  const buttonState = navigation.button.classList.toggle('active', x);
+  const listState = navigation.list.classList.toggle('open', x);
+
+  return buttonState && listState;
+};
+
+// Init
+if (showBackground()) setBackground(true);
+
+// Listeners
+window.addEventListener('scroll', () => {
+  if (listeners.scroll) cancelAnimationFrame(listeners.scroll);
+  listeners.scroll = requestAnimationFrame(() => setBackground(showBackground()));
+});
+
+window.addEventListener('resize', () => {
+  if (listeners.resize) cancelAnimationFrame(listeners.resize);
+  listeners.resize = requestAnimationFrame(() => window.innerWidth > 768 && setMenu(false));
+});
+
+navigation.button.addEventListener('click', () => {
+  setBackground(setMenu() || showBackground());
+});
