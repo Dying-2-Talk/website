@@ -4,7 +4,14 @@
 @font-face {
   font-family: 'Mignon';
   font-display: swap;
-  src: local('./fonts/mignon-regular.otf'), local('./fonts/mignon-it.otf');
+  src: local('./fonts/mignon-regular.otf'), url('./fonts/mignon-regular.otf');
+}
+
+@font-face {
+  font-family: 'Mignon';
+  font-display: swap;
+  font-style: italic;
+  src: local('./fonts/mignon-it.otf'), url('./fonts/mignon-it.otf');
 }
 
 %typography-base {
