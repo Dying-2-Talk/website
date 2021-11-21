@@ -6,95 +6,106 @@
     object-position: center;
   }
 
-  > .label {
+  > .card {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     background-color: $black;
     box-shadow: $boxShadow;
-    display: flex;
-    align-items: center;
     width: 100%;
-    max-width: $sm;
     padding: 24px;
+    display: flex;
+    justify-content: flex-end;
 
-    @media (min-width: $sm) {
-      gap: 48px;
+    @media (min-width: $md) {
+      width: $md;
     }
 
-    > .index {
-      @extend %typography-base;
-
-      display: none;
-      justify-content: center;
-      align-items: center;
-      background-color: $white;
-      flex-shrink: 0;
-      border-radius: 50%;
-      color: $black;
-      width: 64px;
-      height: 64px;
-      padding: 64px;
-      font-size: $fontSize5;
-
-      @media (min-width: $sm) {
-        display: inline-flex;
-      }
+    @media (min-width: $xl) {
+      width: 50%;
     }
 
-    > .body {
+    > .container {
       display: flex;
-      flex-direction: column;
-      color: $white;
+      align-items: center;
+      gap: 48px;
+      max-width: $md;
       flex-grow: 1;
 
-      > h1 {
-        text-transform: uppercase;
-        font-style: normal;
-        margin-bottom: 1rem;
-      }
+      > .index {
+        @extend %typography-base;
 
-      > h2 {
-        margin-bottom: 2rem;
-      }
-
-      > .actions {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        display: none;
+        justify-content: center;
         align-items: center;
-        gap: 20px;
+        background-color: $white;
+        flex-shrink: 0;
+        border-radius: 50%;
+        color: $black;
+        width: 64px;
+        height: 64px;
+        padding: 64px;
+        font-size: $fontSize5;
 
-        > a {
-          padding: 0px;
-          margin-left: auto;
+        @media (min-width: $sm) {
+          display: inline-flex;
+        }
+      }
+
+      > .body {
+        display: flex;
+        flex-direction: column;
+        color: $white;
+        flex-grow: 1;
+
+        > h1 {
+          text-transform: uppercase;
+          font-style: normal;
+          margin-bottom: 1rem;
         }
 
-        > .slides {
+        > h2 {
+          margin-bottom: 2rem;
+        }
+
+        > .actions {
           display: flex;
-          gap: 8px;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: center;
+          gap: 20px;
 
-          > button {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            border: 2px solid $white;
-            color: $white;
-            padding: 16px;
-            border-radius: 50%;
-            width: 16px;
-            height: 16px;
-            transition: color $durationShort, background-color $durationShort;
-            font-weight: bold;
+          > a {
+            padding: 0px;
+            margin-left: auto;
+          }
 
-            @include hoverActive() {
-              color: $black;
-              background-color: $white;
-            }
-            
-            &.active {
-              color: $black;
-              background-color: $white;
+          > .slides {
+            display: flex;
+            gap: 8px;
+
+            > button {
+              display: inline-flex;
+              justify-content: center;
+              align-items: center;
+              border: 2px solid $white;
+              color: $white;
+              padding: 16px;
+              border-radius: 50%;
+              width: 16px;
+              height: 16px;
+              transition: color $durationShort, background-color $durationShort;
+              font-weight: bold;
+
+              @include hoverActive() {
+                color: $black;
+                background-color: $white;
+              }
+
+              &.active {
+                color: $black;
+                background-color: $white;
+              }
             }
           }
         }

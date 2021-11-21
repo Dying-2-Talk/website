@@ -111,11 +111,11 @@
 
     const elements = {
       image: document.querySelector('.Carousel > img'),
-      index: document.querySelector('.Carousel > .label > .index'),
-      title: document.querySelector('.Carousel > .label > .body > h1'),
-      description: document.querySelector('.Carousel > .label > .body > h2'),
-      slides: document.querySelector('.Carousel > .label > .body > .actions > .slides'),
-      link: document.querySelector('.Carousel > .label > .body > .actions > a')
+      index: document.querySelector('.Carousel > .card > .container > .index'),
+      title: document.querySelector('.Carousel > .card > .container > .body > h1'),
+      description: document.querySelector('.Carousel > .card > .container > .body > h2'),
+      slides: document.querySelector('.Carousel > .card > .container > .body > .actions > .slides'),
+      link: document.querySelector('.Carousel > .card > .container > .body > .actions > a')
     };
 
     if (Object.values(elements).every(x => x)) return elements as Elements;
