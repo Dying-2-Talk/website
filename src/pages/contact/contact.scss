@@ -5,8 +5,6 @@
 @import "../../scss/components/_button";
 @import "../../scss/components/_link";
 
-@import "../../scss/modules/blocks/_text";
-
 @import "../../scss/modules/_breadcrumbs";
 @import "../../scss/modules/_page";
 @import "../../scss/modules/_navigation";
@@ -15,7 +13,7 @@
 @include scrollOffset(100px);
 
 body {
-  > main > section > .Text > .contact {
+  > main > section:nth-child(2) > div > .contact {
     margin-top: 24px;
     display: flex;
     flex-direction: column;
@@ -27,24 +25,12 @@ body {
       gap: 32px;
     }
 
-    > .links {
-      > .h6 {
-        margin-bottom: 1rem;
-      }
-
-      > ul > li {
-        margin-bottom: 0.5rem;
-      }
+    > .links > ul > li {
+      margin-bottom: 0.5rem;
     }
 
-    > .address {
-      > a {
-        margin-bottom: 1rem;
-      }
-
-      > p {
-        margin-bottom: 0.5rem;
-      }
+    > .address > p {
+      margin-bottom: 0.5rem;
     }
   }
 }

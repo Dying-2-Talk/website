@@ -19,6 +19,10 @@
   line-height: 1;
   letter-spacing: 1;
   color: inherit;
+
+  &.paragraph {
+    margin-bottom: $fontSize1;
+  }
 }
 
 h1, h2, h3, h4, h5, h6, p, caption {
@@ -78,12 +82,11 @@ p, .p {
   font-size: $fontSize1;
 
   &.paragraph {
-    margin-bottom: $fontSize0;
     line-height: 1.4;
     letter-spacing: 0.8;
   }
+}
 
-  &.caption {
-    font-size: $fontSize0;
-  }
+caption, .caption {
+  font-size: $fontSize0;
 }
