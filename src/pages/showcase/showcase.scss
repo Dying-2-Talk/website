@@ -7,6 +7,7 @@
 
 @import "../../scss/modules/blocks/_carousel";
 
+@import "../../scss/modules/_card";
 @import "../../scss/modules/_breadcrumbs";
 @import "../../scss/modules/_page";
 @import "../../scss/modules/_navigation";
@@ -23,6 +24,18 @@ main {
 
     > * {
       grid-column: 1 / 4;
+    }
+  }
+
+  > section > .works {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 32px;
+
+    @media (min-width: $lg) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 }

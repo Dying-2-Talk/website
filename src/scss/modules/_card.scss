@@ -1,0 +1,54 @@
+%card-base {
+  display: flex;
+  padding: 8px;
+  border: 2px solid transparent;
+  gap: 8px;
+
+  > img {
+    width: auto;
+    height: 100%;
+  }
+
+  > .body {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    > .title {
+      font-size: $fontSize2;
+      letter-spacing: 0.125rem;
+      font-style: italic;
+    }
+
+    > .description {
+      font-size: $fontSize1;
+      letter-spacing: 0.0625rem;
+      font-style: normal;
+    }
+
+    > a {
+      padding: 0px;
+      align-self: flex-end;
+      margin-top: auto;
+    }
+  }
+}
+
+.Card {
+  &.card-horizontal {
+    @extend %card-base;
+
+    max-height: 196px;
+    min-width: 0;
+
+    > .body > .description {
+      height: calc(3 * $fontSize1);
+      overflow: hidden;
+    }
+  }
+
+  &.card-white {
+    border-color: $white;
+  }
+}

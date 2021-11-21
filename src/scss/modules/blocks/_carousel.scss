@@ -18,7 +18,7 @@
     justify-content: flex-end;
 
     @media (min-width: $md) {
-      width: $md;
+      width: min(100%, $md);
     }
 
     @media (min-width: $xl) {
@@ -61,6 +61,7 @@
         > h1 {
           text-transform: uppercase;
           font-style: normal;
+          margin-bottom: 0.5rem;
         }
 
         > .actions {
