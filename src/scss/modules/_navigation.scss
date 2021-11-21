@@ -99,7 +99,7 @@
     }
   }
 
-  &.active {
+  &.active, &.always {
     background-color: $black;
     box-shadow: $boxShadow;
 
