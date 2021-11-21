@@ -31,12 +31,12 @@
     }
 
     > ul {
-      > li > a.active {
-        &.active {
-          padding-left: 16px;
-
+      @media (max-width: $md) {
+        > li > a.active {
+          padding-left: 20px;
+    
           &::before {
-            content: '>';
+            content: '> ';
             position: absolute;
             left: 0px;
           }
@@ -44,8 +44,8 @@
       }
 
       @media (max-width: $sm) {
-        display: none;
         position: absolute;
+        display: none;
         left: 0px;
         right: 0px;
         top: 100%;
@@ -62,16 +62,6 @@
   
           > a {
             color: $white;
-
-            &.active {
-              padding-left: 20px;
-    
-              &::before {
-                content: '> ';
-                position: absolute;
-                left: 0px;
-              }
-            }
           }
         }
       }

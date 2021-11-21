@@ -1,5 +1,14 @@
 @import "../_variables";
 
+%page-base {
+  display: grid;
+  grid-template-columns: 1fr min(100%, $md) 1fr;
+
+  > * {
+    grid-column: 2;
+  }
+}
+
 @mixin section-content($color, $background-color) {
   background-color: $background-color;
   color: $color;
@@ -14,18 +23,13 @@
   }
 }
 
-%page-base {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  justify-items: center;
-
-  > * {
-    grid-column: 2;
-    max-width: $md;
+main {
+  &.page-text {
+    > section {
+      grid-template-columns: 1fr min(100%, $sm) 1fr;
+    }
   }
-}
 
-.Page {
   > section {
     @extend %page-base;
     padding: 32px 16px;

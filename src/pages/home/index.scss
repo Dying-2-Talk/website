@@ -1,6 +1,6 @@
 @import '../../scss/_reset';
 
-@import '../../scss/components/_icons';
+@import '../../scss/components/_icon';
 @import '../../scss/components/_typography';
 @import '../../scss/components/_button';
 @import '../../scss/components/_link';
@@ -28,8 +28,8 @@
 
 @include scrollOffset(100px);
 
-.HomePage {
-  > .Page > section:first-child {
+body {
+  > main > section:first-child {
     position: relative;
     margin: unset;
     max-width: unset;

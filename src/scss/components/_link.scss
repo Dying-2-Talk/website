@@ -56,6 +56,10 @@
       width: 0%;
       transition: width $durationShort;
     }
+
+    &.active::after {
+      width: 100%;
+    }
   
     @include hoverActive {
       &::after {
@@ -65,12 +69,32 @@
   }
 }
 
+@mixin link-icon($color) {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  > .icon {
+    width: 24px;
+    height: 24px;
+    fill: $color;
+  }
+}
+
 a, .link {
   @extend %typography-base;
   display: inline-block;
   position: relative;
   color: inherit;
   text-decoration: none;
+
+  &.link-icon-black {
+    @include link-icon($black);
+  }
+
+  &.link-icon-white {
+    @include link-icon($white);
+  }
 
   &.link-hover-black {
     @include link-hover($black);

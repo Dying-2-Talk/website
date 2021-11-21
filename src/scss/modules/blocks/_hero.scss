@@ -1,0 +1,17 @@
+@import '../../components/_image';
+
+.Hero {
+  > h1 {
+    margin-bottom: 1rem;
+  }
+
+  > img {
+    @extend %image-base;
+    border-color: $black;
+
+    width: 100%;
+    height: auto;
+    max-height: 480px;
+    object-fit: cover;
+  }
+}

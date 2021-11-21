@@ -53,18 +53,6 @@
     @media (min-width: $md) {
       flex-wrap: nowrap;
     }
-
-    > a {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-
-      > svg {
-        width: 24px;
-        height: 24px;
-        fill: $black;
-      }
-    }
   }
 
   > .source > p {

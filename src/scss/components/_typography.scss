@@ -54,6 +54,7 @@ h2, .h2 {
 
 h3, .h3 {
   font-size: $fontSize4;
+  letter-spacing: 0.75rem;
 }
 
 h4, .h4 {
@@ -73,7 +74,7 @@ h6, .h6 {
   font-weight: 600;
 }
 
-p {
+p, .p {
   font-size: $fontSize1;
 
   &.paragraph {

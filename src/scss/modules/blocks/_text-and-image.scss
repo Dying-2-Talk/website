@@ -1,4 +1,5 @@
 @import '../../_variables';
+@import '../../components/_image';
 
 .Text-and-image {
   display: flex;
@@ -16,9 +17,9 @@
   }
 
   > img {
+    @extend %image-base;
+
     flex-shrink: 0;
-    border: 2px solid $white;
-    padding: 8px;
     object-fit: cover;
     max-width: $xs;
     max-height: $xs;
