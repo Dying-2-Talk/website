@@ -44,18 +44,17 @@
       }
 
       @media (max-width: $sm) {
-        display: block;
+        display: none;
         position: absolute;
         left: 0px;
         right: 0px;
         top: 100%;
         border-top: 2px solid $primary;
-        opacity: 0;
         background-color: $black;
-        transition: opacity $durationComplex;
+        box-shadow: $boxShadow;
 
         &.open {
-          opacity: 1;
+          display: block;
         }
   
         > li {
@@ -112,6 +111,7 @@
 
   &.active {
     background-color: $black;
+    box-shadow: $boxShadow;
 
     > nav {
       > .logo {

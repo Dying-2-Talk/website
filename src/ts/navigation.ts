@@ -50,5 +50,5 @@ window.addEventListener('resize', () => {
 });
 
 navigation.button.addEventListener('click', () => {
-  setBackground(setMenu() || showBackground());
+  setMenu();
 });
