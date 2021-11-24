@@ -25,7 +25,7 @@
   }
 }
 
-h1, h2, h3, h4, h5, h6, p, caption {
+h1, h2, h3, h4, h5, h6, p, caption, figcaption, cite {
   @extend %typography-base;
 }
 
@@ -97,11 +97,15 @@ p, .p {
   }
 }
 
-caption, .caption {
+caption, .caption, figcaption, cite {
   font-size: $fontSize0;
   font-style: normal;
 
   &.paragraph {
     margin-bottom: $fontSize0;
   }
+}
+
+cite {
+  font-style: italic;
 }

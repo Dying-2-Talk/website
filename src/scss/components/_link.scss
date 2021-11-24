@@ -88,6 +88,14 @@ a, .link {
   color: inherit;
   text-decoration: none;
 
+  &.footnote {
+    font-size: $fontSize0;
+
+    @include hoverActive {
+      text-decoration: underline;
+    }
+  }
+
   &.link-icon-black {
     @include link-icon($black);
   }

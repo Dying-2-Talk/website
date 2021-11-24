@@ -1,0 +1,22 @@
+@import "../_mixins";
+@import "../_variables";
+
+.quote > blockquote {
+  > p {
+    &::before {
+      content: "\201c";
+    }
+
+    &::after {
+      content: "\201D";
+    }
+  }
+
+  > figcaption {
+    margin-top: 8px;
+
+    &::before {
+      content: " - "
+    }
+  }
+}
