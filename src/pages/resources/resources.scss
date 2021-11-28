@@ -8,8 +8,21 @@
 @import "../../scss/modules/blocks/_hero";
 
 @import "../../scss/modules/_breadcrumbs";
+@import "../../scss/modules/resource";
 @import "../../scss/modules/_page";
 @import "../../scss/modules/_navigation";
 @import "../../scss/modules/_footer";
 
 @include scrollOffset(100px);
+
+body > main {
+  > section > .resources {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+
+    @media (min-width: $sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
