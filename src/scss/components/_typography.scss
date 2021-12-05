@@ -70,11 +70,12 @@ h2, .h2 {
 
 h3, .h3 {
   font-size: $fontSize3;
-  letter-spacing: 0.75rem;
   line-height: 1;
+  letter-spacing: 0.5rem;
   font-style: normal;
-
+  
   @media (min-width: $xs) {
+    letter-spacing: 0.75rem;
     font-size: $fontSize4;
   }
 }

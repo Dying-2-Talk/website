@@ -1,6 +1,8 @@
 .Carousel {
   > img {
-    height: 100%;
+    position: absolute;
+    top: $header;
+    height: calc(100% - $header);
     width: 100%;
     object-fit: cover;
     object-position: center;

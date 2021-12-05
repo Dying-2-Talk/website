@@ -30,7 +30,7 @@ main {
   > section > .works {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 32px;
     margin-top: 32px;
 
     @media (min-width: $lg) {

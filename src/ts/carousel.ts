@@ -6,96 +6,96 @@
       href: string,
       title: string
     },
-    image: {
-      src: string
-      alt: string
-    }
+    // image: {
+    //   src: string
+    //   alt: string
+    // }
   };
 
   const works: Work[] = [
     {
-      title: 'Music',
-      description: 'Description',
-      link: {
-        href: './showcase/music.html',
-        title: 'Music'
-      },
-      image: {
-        src: './images/skeleton.jpeg',
-        alt: 'Alt'
-      }
-    },
-    {
-      title: 'Video / Photography',
-      description: 'Description',
-      link: {
-        href: './showcase/video-photography.html',
-        title: 'Video / photography'
-      },
-      image: {
-        src: './images/skeleton.jpeg',
-        alt: 'Alt'
-      }
-    },
-    {
-      title: 'Writing',
-      description: 'Description',
+      title: 'Writing Group',
+      description: 'The writing group focused on opening conversation through the media of literature.',
       link: {
         href: './showcase/writing.html',
         title: 'Writing'
       },
-      image: {
-        src: './images/skeleton.jpeg',
-        alt: 'Alt'
-      }
+      // image: {
+      //   src: './images/showcase/writing.png',
+      //   alt: 'Ellis The Elephant'
+      // }
     },
     {
-      title: 'Dance',
-      description: 'Description',
+      title: 'Photography Group',
+      description: 'The photography group focused on opening conversation through the media of photographs.',
       link: {
-        href: './showcase/dance.html',
-        title: 'Dance'
+        href: './showcase/photography.html',
+        title: 'Photography'
       },
-      image: {
-        src: './images/skeleton.jpeg',
-        alt: 'Alt'
-      }
+      // image: {
+      //   src: './images/skeleton.jpeg',
+      //   alt: 'Alt'
+      // }
     },
     {
-      title: 'Art / Craft',
-      description: 'Description',
-      link: {
-        href: './showcase/art-craft.html',
-        title: 'Art / craft'
-      },
-      image: {
-        src: './images/skeleton.jpeg',
-        alt: 'Alt'
-      }
-    },
-    {
-      title: 'Food',
-      description: 'Description',
+      title: 'Food Group',
+      description: 'The food group focused on opening conversation through the media of food and drink.',
       link: {
         href: './showcase/food.html',
         title: 'Food'
       },
-      image: {
-        src: './images/skeleton.jpeg',
-        alt: 'Alt'
-      }
+      // image: {
+      //   src: './images/skeleton.jpeg',
+      //   alt: 'Alt'
+      // }
+    },
+    {
+      title: 'Arts & Crafts Group',
+      description: 'The art/craft group focused on opening conversation through the media of arts and craft.',
+      link: {
+        href: './showcase/art-craft.html',
+        title: 'Arts & Crafts'
+      },
+      // image: {
+      //   src: './images/skeleton.jpeg',
+      //   alt: 'Alt'
+      // }
+    },
+    {
+      title: 'Dance Group',
+      description: 'The dance group focused on opening conversation through the media of dance and movement.',
+      link: {
+        href: './showcase/dance.html',
+        title: 'Dance'
+      },
+      // image: {
+      //   src: './images/skeleton.jpeg',
+      //   alt: 'Alt'
+      // }
+    },
+    {
+      title: 'Music',
+      description: 'The music group focused on opening conversation through the media of song and music.',
+      link: {
+        href: './showcase/music.html',
+        title: 'Music'
+      },
+      // image: {
+      //   src: './images/skeleton.jpeg',
+      //   alt: 'Alt'
+      // }
     },
     {
       title: 'Technology',
-      description: 'Description',
+      description: 'The technology group focused on opening conversation through the media of technology and computers.',
       link: {
         href: './showcase/technology.html',
         title: 'Technology'
       },
-      image: {
-        src: './images/skeleton.jpeg',
-        alt: 'Alt'
-      }
+      // image: {
+      //   src: './images/skeleton.jpeg',
+      //   alt: 'Alt'
+      // }
     }
   ];
 
@@ -143,10 +143,10 @@
     carousel.index.innerText = `${i}`;
   };
 
-  const setImage = (src: string, alt: string) => {
-    carousel.image.src = src;
-    carousel.image.alt = alt;
-  };
+  // const setImage = (src: string, alt: string) => {
+  //   carousel.image.src = src;
+  //   carousel.image.alt = alt;
+  // };
 
   const setTitle = (title: string) => {
     carousel.title.innerText = title;
@@ -178,7 +178,7 @@
     setButton(prevNormal, false);
     setButton(curNormal, true);
     setIndex(curNormal + 1);
-    setImage(work.image.src, work.image.alt);
+    // setImage(work.image.src, work.image.alt);
     setTitle(work.title);
     setDescription(work.description);
     setLink(work.link.href, work.link.title);
