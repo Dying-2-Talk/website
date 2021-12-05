@@ -35,36 +35,48 @@ h1, h2, h3, h4, h5, h6, p, caption, figcaption, cite, span {
  */
 
 h1, .h1 {
-  font-size: $fontSize4;
+  font-size: $fontSize3;
   letter-spacing: 1rem;
   line-height: 1;
   font-style: normal;
 
   @media (min-width: $xs) {
     letter-spacing: 2rem;
-    font-size: $fontSize5;
+    font-size: $fontSize4;
   }
 
   @media (min-width: $sm) {
+    font-size: $fontSize5;
+  }
+
+  @media (min-width: $md) {
     font-size: $fontSize6;
   }
 }
 
 h2, .h2 {
-  font-size: $fontSize4;
+  font-size: $fontSize3;
   font-style: normal;
   line-height: 1;
 
   @media (min-width: $xs) {
+    font-size: $fontSize4;
+  }
+
+  @media (min-width: $sm) {
     font-size: $fontSize5;
   }
 }
 
 h3, .h3 {
-  font-size: $fontSize4;
+  font-size: $fontSize3;
   letter-spacing: 0.75rem;
   line-height: 1;
   font-style: normal;
+
+  @media (min-width: $xs) {
+    font-size: $fontSize4;
+  }
 }
 
 h4, .h4 {
