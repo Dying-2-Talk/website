@@ -33,7 +33,7 @@ main {
 
   > section {
     @extend %page-base;
-    padding: 32px 16px;
+    padding: 64px 16px;
 
     &.section-content-black {
       @include section-content($white, $black);

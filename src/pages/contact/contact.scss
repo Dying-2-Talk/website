@@ -14,23 +14,25 @@
 
 body {
   > main > section:nth-child(2) > div > .contact {
-    margin-top: 24px;
+    margin-top: 48px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 32px;
 
     @media (min-width: $sm) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
     }
 
-    > .links > ul > li {
-      margin-bottom: 0.5rem;
-    }
+    > section {
+      > a {
+        margin-bottom: 16px;
+      }
 
-    > .address > p {
-      margin-bottom: 0.5rem;
+      > ul > li {
+        margin-bottom: 0.75rem;
+        margin-left: 0.75rem;
+      }
     }
   }
 }
