@@ -4,7 +4,7 @@
   border: 2px solid transparent;
   gap: 16px;
 
-  > img {
+  > a > img {
     object-fit: cover;
     object-position: center;
   }
@@ -40,28 +40,25 @@
     @extend %card-base;
     flex-direction: column;
 
-    > img {
+    > a > img {
       width: 100%;
     }
 
     @media (min-width: $xs) {
-      > img {
+      > a > img {
         height: 128px;
       }
     }
 
     @media (min-width: $sm) {
-      > img {
+      > a > img {
         height: 192px;
       }
     }
 
     @media (min-width: $md) {
-      flex-direction: row;
-
-      > img {
-        width: 192px;
-      }
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 

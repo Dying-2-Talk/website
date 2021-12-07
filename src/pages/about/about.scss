@@ -14,3 +14,21 @@
 @import "../../scss/modules/_footer";
 
 @include scrollOffset(100px);
+
+body > main {
+  > .Breadcrumbs {
+    padding-bottom: 32px;
+  }
+
+  > section > .quote {
+    padding-bottom: 32px;
+
+    > blockquote > p {
+      font-size: $fontSize2;
+    }
+  }
+
+  > .section-content-black {
+    margin-bottom: 32px;
+  }
+}

@@ -32,10 +32,5 @@ main {
     flex-direction: column;
     gap: 32px;
     margin-top: 32px;
-
-    @media (min-width: $lg) {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-    }
   }
 }

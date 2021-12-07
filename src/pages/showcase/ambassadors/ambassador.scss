@@ -5,7 +5,7 @@
 @import "../../../scss/components/_button";
 @import "../../../scss/components/_link";
 
-@import "../../../scss/modules/blocks/_carousel";
+@import "../../../scss/modules/blocks/_hero";
 
 @import "../../../scss/modules/_card";
 @import "../../../scss/modules/_breadcrumbs";
@@ -14,3 +14,23 @@
 @import "../../../scss/modules/_footer";
 
 @include scrollOffset(100px);
+
+body > main {
+  > .Breadcrumbs {
+    padding-bottom: 32px;
+  }
+
+  > section {
+    > .Hero {
+      margin-bottom: 32px;
+    }
+
+    > ul {
+      margin-top: 16px;
+
+      > li + li {
+        margin-top: 0.75rem;
+      }
+    }
+  }
+}

@@ -12,8 +12,12 @@
 
 @include scrollOffset(100px);
 
-body {
-  > main > section:nth-child(2) > div > .contact {
+body > main {
+  > .Breadcrumbs {
+    padding-bottom: 32px;
+  }
+
+  > section:nth-child(2) > div > .contact {
     margin-top: 48px;
     display: flex;
     flex-direction: column;
@@ -30,7 +34,7 @@ body {
       }
 
       > ul > li {
-        margin-bottom: 0.75rem;
+        margin-bottom: 0.5rem;
         margin-left: 0.75rem;
       }
     }
