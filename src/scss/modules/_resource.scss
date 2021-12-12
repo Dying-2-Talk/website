@@ -1,0 +1,40 @@
+.Resource {
+  background-color: $black;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $md) {
+    padding: 24px 32px;
+  }
+
+  > .header {
+    display: flex;
+    justify-content: space-between;
+    color: $white;
+    margin-bottom: 16px;
+
+    > span {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-style: italic;
+    }
+  }
+
+  > p {
+    color: $white;
+    margin-bottom: 32px;
+    flex-grow: 1;
+  }
+
+  > .actions {
+    display: flex;
+    justify-content: flex-end;
+
+    > a {
+      padding: 8px 16px;
+      gap: 8px;
+    }
+  }
+}

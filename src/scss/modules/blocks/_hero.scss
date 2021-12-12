@@ -1,10 +1,6 @@
 @import '../../components/_image';
 
 .Hero {
-  > h1 {
-    margin-bottom: 1rem;
-  }
-
   > img {
     @extend %image-base;
     border-color: $black;

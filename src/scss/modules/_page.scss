@@ -6,16 +6,17 @@
 
   > * {
     grid-column: 2;
+    min-height: 0;
   }
 }
 
 @mixin section-content($color, $background-color) {
   background-color: $background-color;
   color: $color;
-  padding: 96px 16px;
+  padding: 64px 16px;
 
   @media (min-width: $sm) {
-    padding: 192px 32px;
+    padding: 96px 32px;
   }
 
   > .Text-and-image > img {
@@ -32,7 +33,7 @@ main {
 
   > section {
     @extend %page-base;
-    padding: 32px 16px;
+    padding: 64px 16px;
 
     &.section-content-black {
       @include section-content($white, $black);

@@ -1,0 +1,16 @@
+.list {
+  margin-left: 12px;
+
+  > li {
+    display: inline-flex;
+    gap: 16px;
+
+    + li {
+      margin-top: 0.5rem;
+    }
+
+    &::before {
+      content: '•'
+    }
+  }
+}

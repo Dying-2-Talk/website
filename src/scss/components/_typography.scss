@@ -16,12 +16,16 @@
 
 %typography-base {
   font-family: 'Mignon', sans-serif;
-  line-height: 1;
-  letter-spacing: 1;
+  line-height: 1.4;
+  letter-spacing: 0rem;
   color: inherit;
+
+  &.paragraph {
+    margin-bottom: $fontSize1;
+  }
 }
 
-h1, h2, h3, h4, h5, h6, p, caption {
+h1, h2, h3, h4, h5, h6, p, caption, figcaption, cite, span, ul, li {
   @extend %typography-base;
 }
 
@@ -31,59 +35,90 @@ h1, h2, h3, h4, h5, h6, p, caption {
  */
 
 h1, .h1 {
-  font-size: $fontSize4;
+  font-size: $fontSize3;
   letter-spacing: 1rem;
+  line-height: 1;
+  font-style: normal;
 
   @media (min-width: $xs) {
     letter-spacing: 2rem;
-    font-size: $fontSize5;
+    font-size: $fontSize4;
   }
 
   @media (min-width: $sm) {
+    font-size: $fontSize5;
+  }
+
+  @media (min-width: $md) {
     font-size: $fontSize6;
   }
 }
 
 h2, .h2 {
-  font-size: $fontSize4;
+  font-size: $fontSize3;
+  font-style: normal;
+  line-height: 1;
 
   @media (min-width: $xs) {
+    font-size: $fontSize4;
+  }
+
+  @media (min-width: $sm) {
     font-size: $fontSize5;
   }
 }
 
 h3, .h3 {
-  font-size: $fontSize4;
-  letter-spacing: 0.75rem;
+  font-size: $fontSize3;
+  line-height: 1;
+  letter-spacing: 0.5rem;
+  font-style: normal;
+  
+  @media (min-width: $xs) {
+    letter-spacing: 0.75rem;
+    font-size: $fontSize4;
+  }
 }
 
 h4, .h4 {
   font-size: $fontSize3;
   font-style: italic;
   letter-spacing: 0.5rem;
+  line-height: 1;
 }
 
 h5, .h5 {
   font-size: $fontSize2;
   font-style: italic;
   letter-spacing: 0.25rem;
+  line-height: 1;
 }
 
 h6, .h6 {
   font-size: $fontSize1;
   font-weight: 600;
+  font-style: normal;
+  line-height: 1;
 }
 
 p, .p {
   font-size: $fontSize1;
+  font-style: normal;
 
   &.paragraph {
     margin-bottom: $fontSize0;
-    line-height: 1.4;
-    letter-spacing: 0.8;
   }
+}
 
-  &.caption {
-    font-size: $fontSize0;
+caption, .caption, figcaption, cite {
+  font-size: $fontSize0;
+  font-style: normal;
+
+  &.paragraph {
+    margin-bottom: $fontSize0;
   }
+}
+
+cite {
+  font-style: italic;
 }

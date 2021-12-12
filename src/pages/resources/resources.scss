@@ -1,0 +1,46 @@
+@import "../../scss/_reset";
+
+@import "../../scss/components/_icon";
+@import "../../scss/components/_typography";
+@import "../../scss/components/_button";
+@import "../../scss/components/_link";
+
+@import "../../scss/modules/_breadcrumbs";
+@import "../../scss/modules/_resource";
+@import "../../scss/modules/_page";
+@import "../../scss/modules/_navigation";
+@import "../../scss/modules/_footer";
+
+@include scrollOffset(100px);
+
+body > main {
+  > .Breadcrumbs {
+    padding-bottom: 32px;
+  }
+
+  > section {
+    > .video {
+      margin-top: 32px;
+    }
+
+    > .resources {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      margin-top: 32px;
+
+      @media (min-width: $sm) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    > div > ul > li {
+      margin-left: 0.75rem;
+      margin-top: 0.75rem;
+      
+      &::before {
+        content: '- '
+      }
+    }
+  }
+}

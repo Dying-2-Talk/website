@@ -15,6 +15,7 @@
 
 @mixin button-filled($color, $background-color) {
   @extend %button-base;
+
   transition: border-color $durationShort, color $durationShort, background-color $durationShort;
   color: $color;
   background-color: $background-color;
@@ -31,6 +32,7 @@
 
 @mixin button-outline($color, $background-color) {
   @extend %button-base;
+
   transition: color $durationShort, background-color $durationShort;
   color: $color;
   fill: $color;
@@ -43,12 +45,27 @@
   }
 }
 
+@mixin button-text($color) {
+  @extend %button-base;
+
+  color: $color;
+  fill: $color;
+}
+
 button, .button {
   @extend %typography-base;
   cursor: pointer;
   border: none;
   background-color: transparent;
   padding: 0;
+
+  &.button-text-black {
+    @include button-text($black);
+  }
+
+  &.button-text-white {
+    @include button-text($white);
+  }
 
   &.button-filled-black {
     @include button-filled($white, $black);

@@ -18,6 +18,7 @@
 
     > .logo {
       display: flex;
+      align-items: center;
       gap: 10px;
 
       > p {
@@ -99,7 +100,7 @@
     }
   }
 
-  &.active {
+  &.active, &.always {
     background-color: $black;
     box-shadow: $boxShadow;
 
